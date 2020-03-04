@@ -1,0 +1,122 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Gabriela", serif;
+}
+@font-face {
+  font-family: neonFont;
+  src: url(fonts/Neon80S-8jL2.ttf);
+}
+html {
+  max-width: 100%;
+  overflow-x: hidden;
+  font-size: 10px;
+}
+header {
+  height: 100vh;
+  position: relative;
+}
+header h1 {
+  font-size: 10rem;
+  padding: 5rem;
+  color: #ffd528;
+}
+header nav ul {
+  padding-top: 10rem;
+}
+header nav ul li {
+  font-size: 3rem;
+  padding: 2rem 5rem 0rem;
+}
+article {
+  height: 100vh;
+  width: 100vw;
+}
+h2 {
+  font-size: 7rem;
+  padding: 5rem;
+  color: aliceblue;
+}
+p,
+li {
+  font-size: 2rem;
+  padding-left: 5rem;
+  color: aliceblue;
+}
+/*////////////////////////////// NEON HEADRE ////////////////////////////// */
+
+.neon {
+  font-family: neonFont;
+  font-size: 5rem;
+  letter-spacing: 0.3rem;
+  color: #ffd528;
+  text-shadow: 0px 0px 1rem #ffdb4a;
+}
+
+#smilley {
+  width: 515px;
+  height: 515px;
+
+  position: absolute;
+  bottom: 0px;
+  left: 45%;
+}
+
+/*////////////////////////////// CHANGE BACKGROUND COLOR ////////////////////////////// */
+
+body {
+  transition: background-color 1s ease;
+  background-color: #000000;
+}
+.colorfull {
+  min-height: 100vh;
+  justify-content: space-around; /*/////////////////////////////////////////// */
+}
+.color-zeroC {
+  background-color: #000000;
+}
+.color-oneC {
+  background-color: #171717;
+}
+.color-twoC {
+  background-color: #2e2e2e;
+}
+.color-threeC {
+  background-color: #454545;
+}
+/*////////////////////////////// SCROLL-BUTTONS ////////////////////////////// */
+#first {
+}
+#second {
+}
+#third {
+}
+article {
+  position: relative;
+}
+button {
+  margin: auto;
+  position: absolute;
+  width: 8rem;
+  height: 3rem;
+  background: greenyellow;
+  border: none;
+}
+.topButton {
+  left: 46vw;
+  border-bottom-left-radius: 1rem;
+  border-bottom-right-radius: 1rem;
+}
+.downButton {
+  left: 46vw;
+  bottom: 0;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+}
+.linkButton {
+  right: 0;
+  top: 48vh;
+}
