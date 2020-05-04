@@ -1,4 +1,3 @@
 # Portfolio
-This is my unfinished portfolio
-
-More info in the future 
+The first version of my portfolio
+It will be still upgrade
