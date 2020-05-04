@@ -4,7 +4,6 @@
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  font-family: "Gabriela", serif;
 }
 @font-face {
   font-family: neonFont;
@@ -15,108 +14,251 @@ html {
   overflow-x: hidden;
   font-size: 10px;
 }
-header {
+body {
+  background-color: #222222;
+}
+#loading{
+  position: fixed;
+  width: 100%;
   height: 100vh;
+  background: #1B1C1C
+  url(https://media.giphy.com/media/VX7yEoXAFf8as/giphy.gif)
+  no-repeat center;
+  z-index: 999;
+}
+
+.section {
   position: relative;
-}
-header h1 {
-  font-size: 10rem;
-  padding: 5rem;
-  color: #ffd528;
-}
-header nav ul {
-  padding-top: 10rem;
-}
-header nav ul li {
-  font-size: 3rem;
-  padding: 2rem 5rem 0rem;
-}
-article {
   height: 100vh;
   width: 100vw;
 }
-h2 {
-  font-size: 7rem;
-  padding: 5rem;
-  color: aliceblue;
+/* ////////////////////////ANIMATIONS//////////////////////// */
+#sign {
+  width: 48%;
+  z-index: -2;
 }
-p,
-li {
-  font-size: 2rem;
-  padding-left: 5rem;
-  color: aliceblue;
+#sign,
+#sign2 {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+#sign2 {
+  width: 82%;
+  z-index: 1;
+  opacity: 0;
+}
+#welcome,
+#working,
+#reading {
+  position: absolute;
+  bottom: 1vh;
+  right: 1vw;
+  width: 30vw;
+  z-index: -3;
 }
 /*////////////////////////////// NEON HEADRE ////////////////////////////// */
-
 .neon {
-  font-family: neonFont;
-  font-size: 5rem;
-  letter-spacing: 0.3rem;
+  
+  height: 150px;
+  opacity: 0;
+  left: 5%;
+}
+#neon1 {
+  position: absolute;
+  top: 40%;
+  
+}
+#neon2 {
+  position: absolute;
+  top: 55%;
+}
+#neon3 {
+  position: absolute;
+  top: 70%;
+  left: 4.75%;
+}
+.visable {
+  opacity: 1;
+}
+/* ////////////////////////CONTENT//////////////////////// */
+h2 {
+  position: absolute;
+  left: 5%;
+  top: 5%;
+  font-size: 13rem;
+  letter-spacing: 1px;
   color: #ffd528;
-  text-shadow: 0px 0px 1rem #ffdb4a;
+  font-family: reklame-script, sans-serif;
+  font-weight: 400;
+  font-style: normal;
 }
-
-#smilley {
-  width: 515px;
-  height: 515px;
-
+.points {
   position: absolute;
-  bottom: 0px;
-  left: 45%;
+  left: 5%;
+  top: 50%;
 }
-
-/*////////////////////////////// CHANGE BACKGROUND COLOR ////////////////////////////// */
-
-body {
-  transition: background-color 1s ease;
-  background-color: #000000;
+.points li {
+  font-size: 3rem;
+  font-family: brevia, sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  color: #ecf0f1;
+  list-style: none;
+  padding: 5px 0;
 }
-.colorfull {
-  min-height: 100vh;
-  justify-content: space-around; /*/////////////////////////////////////////// */
-}
-.color-zeroC {
-  background-color: #000000;
-}
-.color-oneC {
-  background-color: #171717;
-}
-.color-twoC {
-  background-color: #2e2e2e;
-}
-.color-threeC {
-  background-color: #454545;
-}
-/*////////////////////////////// SCROLL-BUTTONS ////////////////////////////// */
-#first {
-}
-#second {
-}
-#third {
-}
-article {
-  position: relative;
-}
-button {
-  margin: auto;
+/* ////////////////////////BUTTON//////////////////////// */
+.links {
   position: absolute;
-  width: 8rem;
-  height: 3rem;
-  background: greenyellow;
-  border: none;
-}
-.topButton {
-  left: 46vw;
-  border-bottom-left-radius: 1rem;
-  border-bottom-right-radius: 1rem;
-}
-.downButton {
-  left: 46vw;
-  bottom: 0;
-  border-top-left-radius: 1rem;
-  border-top-right-radius: 1rem;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
 }
 .linkButton {
-  right: 0;
-  top: 48vh;
+  cursor: pointer;
+  position: relative;
+  background: none;
+  color: #56e7e0;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: 0.2em solid #56e7e0;
+  padding: 0.5em 1em;
+  font-family: neonFont;
+  font-size: 2rem;
+}
+.linkButton::before {
+  cursor: pointer;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #222222;
+  height: 0.3em;
+  right: 20%;
+  top: -0.21em;
+  transform: skewX(-45deg);
+  -webkit-transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.linkButton::after {
+  cursor: pointer;
+  content: "";
+  display: block;
+  position: absolute;
+  width: 10%;
+  background: #222222;
+  height: 0.3em;
+  left: 20%;
+  bottom: -0.25em;
+  transform: skewX(45deg);
+  -webkit-transition: all 0.45 cubic-bezier(0.86, 0, 0.07, 1);
+  transition: all 0.45s cubic-bezier(0.86, 0, 0.07, 1);
+}
+.linkButton:hover::before {
+  right: 80%;
+}
+.linkButton:hover::after {
+  left: 80%;
+}
+#fp-nav ul li a span,
+.fp-slidesNav ul li a span {
+  background: #56e7e0;
+}
+#footer {
+  position: absolute;
+  width: 100vw;
+  bottom: 0;
+}
+#footer p {
+  font-size: 2rem;
+  color: #ecf0f1;
+  text-align: center;
+}
+@media only screen and (max-width: 801px) {
+  .points {
+    display: none;
+  }
+  #sign {
+    width: 58.5%;
+  }
+  #sign2 {
+    width: 100%;
+  }
+  .neon {
+    height: 100px;
+  }
+  #neon1 {
+    top: 28%;
+  }
+  #neon2 {
+    top: 41%;
+  }
+  #neon3 {
+    top: 54%;
+  }
+  #welcome,
+  #reading,
+  #working {
+    width: 55vw;
+
+  }
+  .links {
+    position: absolute;
+    left: 20%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+  }
+}
+@media only screen and (max-width: 620px) { 
+  #welcome,
+  #reading,
+  #working {
+    width: 68vw;
+
+  }
+}
+@media only screen and (max-width: 480px) {
+  #welcome,
+  #reading,
+  #working {
+    width: 90vw;
+    right: -10vw;
+  }
+  .neon {
+    height: 60px;
+  }
+  #neon1 {
+    top: 25%;
+  }
+  #neon2 {
+    top: 33%;
+  }
+  #neon3 {
+    top: 41%;
+  }
+}
+@media only screen and (max-width: 400px) {
+  h2 {
+    font-size: 8rem;
+  }
+  #sign {
+    width: 70.2%;
+    top: 7%;
+  }
+  #sign2 {
+    width: 120%;
+    top: 7%;
+  }
+}
+@media only screen and (max-width: 340px) {
+  h2 {
+    font-size: 5rem;
+  }
+  .links {
+    position: absolute;
+    left: 25%;
+    top: 25%;
+    transform: translate(-50%, -50%);
+  }
 }

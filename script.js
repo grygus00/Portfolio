@@ -1,101 +1,86 @@
-// var smille = bodymovin.loadAnimation({
-//   container: document.getElementById("smilley"),
-//   render: "svg",
-//   loop: true,
-//   autoplay: true,
-//   animationData: "WebAnim/SmileWeb.json",
-// });
-
-
-
-$(window)
-  .scroll(function() {
-    // selectors
-    var $window = $(window),
-      $body = $("body"),
-      $panel = $(".colorfull");
-
-    // Change 33% earlier than scroll position so colour is there when you arrive.
-    var scroll = $window.scrollTop() + $window.height() / 3;
-
-    $panel.each(function() {
-      var $this = $(this);
-
-      // if position is within range of this panel.
-      // So position of (position of top of div <= scroll position) && (position of bottom of div > scroll position).
-      // Remember we set the scroll to 33% earlier in scroll var.
-      if (
-        $this.position().top <= scroll &&
-        $this.position().top + $this.height() > scroll
-      ) {
-        // Remove all classes on body with color-
-        $body.removeClass(function(index, css) {
-          return (css.match(/(^|\s)color-\S+/g) || []).join(" ");
-        });
-
-        // Add class of currently active div
-        $body.addClass("color-" + $(this).data("color"));
-      }
-    });
-  })
-  .scroll();
-
-// ------------------------------SCROLL ARROWS------------------------------ //
-
-$(document).ready(function() {
-  ///////////////////////////////////
-  $("#click0").click(function() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#first").offset().top
-      },
-      2000
-    );
-  });
-  ///////////////////////////////////
-  $("#click1").click(function() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#headd").offset().top
-      },
-      2000
-    );
-  });
-  ///////////////////////////////////
-  $("#click2").click(function() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#second").offset().top
-      },
-      2000
-    );
-  });
-  ///////////////////////////////////
-  $("#click3").click(function() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#first").offset().top
-      },
-      2000
-    );
-  });
-  ///////////////////////////////////
-  $("#click4").click(function() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#third").offset().top
-      },
-      2000
-    );
-  });
-  ///////////////////////////////////
-  $("#click5").click(function() {
-    $("html, body").animate(
-      {
-        scrollTop: $("#second").offset().top
-      },
-      2000
-    );
-  });
-  ///////////////////////////////////
+new fullpage("#fullPage", {
+  autoScrolling: true,
+  navigation: true,
+  licenseKey: "r5?XkoI^s7",
 });
+
+var wag1 = bodymovin.loadAnimation({
+  container: document.getElementById("welcome"),
+  render: "svg",
+  autoplay: false,
+  path: "anime/welcome.json",
+  name: 'stopForSecond',
+});
+var sign1 = bodymovin.loadAnimation({
+  container: document.getElementById("sign"),
+  render: "svg",
+  autoplay: false,
+  path: "anime/Neon_sign.json",
+  name: 'stopForSecond',
+});
+
+var work = bodymovin.loadAnimation({
+  container: document.getElementById("working"),
+  render: "canvas",
+  loop: true,
+  autoplay: true,
+  path: "anime/work1.json",
+});
+var nr = bodymovin.loadAnimation({
+  container: document.getElementById("reading"),
+  render: "canvas",
+  autoplay: true,
+  loop: true,
+  path: "anime/reading1.json",
+});
+
+var opacity = 0;
+var myopacity = 0;
+
+function MyFadeFunction() {
+  if (myopacity < 1) {
+    myopacity += 0.075;
+    setTimeout(function () {
+      MyFadeFunction();
+    }, 150);
+  }
+  document.getElementById("neon1").style.opacity = myopacity;
+  bodymovin.play('stopForSecond');
+}
+function MyFadeFunction2() {
+  if (myopacity < 1) {
+    myopacity += 0.075;
+    setTimeout(function () {
+      MyFadeFunction2();
+    }, 200);
+  }
+  document.getElementById("neon2").style.opacity = myopacity;
+}
+function MyFadeFunction3() {
+  if (myopacity < 1) {
+    myopacity += 0.2;
+    setTimeout(function () {
+      MyFadeFunction3();
+    }, 160);
+  }
+  document.getElementById("sign2").style.opacity = myopacity;
+  document.getElementById("neon3").style.opacity = myopacity;
+}
+
+setTimeout(function () {
+  MyFadeFunction();
+}, 2100);
+setTimeout(function () {
+  opacity = 0;
+  myopacity = 0;
+  MyFadeFunction2();
+}, 4000);
+setTimeout(
+  function () {
+    opacity = 0;
+    myopacity = 0;
+    MyFadeFunction3();
+  }, 6000
+);
+
+
